@@ -1,0 +1,27 @@
+@media (min-device-width: 550px) and (min-width: 800px) and (orientation: landscape),
+(min-device-height: 800px) and (min-width: 550px) and (orientation: portrait){
+    .recommend-info{
+        .recommend-info__item{
+            display: inline-block;
+            width: 50%;
+            padding: px2rem(8);
+            margin-top: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .recommend-info__item__thumb,.recommend-info__item__metadata{
+            display: block;
+        }
+        .recommend-info__item__thumb__content{
+            width: 100%;
+            height: auto;
+            padding-bottom: 56.25%;
+        }
+        .recommend-info__item__metadata__title{
+            padding: 0;
+            h4{
+                -webkit-line-clamp: 2;
+            }
+        }
+    }
+}

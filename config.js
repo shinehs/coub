@@ -49,12 +49,20 @@ Object.assign(config, {
   localserver: setting.localserver,
   dest: setting.dest,
   commit: {},
-
+  alias: {
+    // js 输出地址
+    jsDest: path.join(setting.localserver.root, setting.dest.basePath, setting.dest.jsPath),
+    // js lib 输出地址
+    jslibDest: path.join(setting.localserver.root, setting.dest.basePath, setting.dest.jslibPath),
+  },
   concat: { // js 合并
-    // '{$jsDest}/vendors.js': ['{$srcRoot}/js/lib/a.js', '{$srcRoot}/js/lib/b.js']
+    '{$jsDest}/ventors.js': [
+      '{$jslibDest}/zepto/zepto.js'
+    ]
   },
   resource: { // 自定义项目中其他需打包的文件夹
-    // 'src/pc/svga': path.join(setting.localserver.root, setting.dest.basePath, 'tpl')
+    'src/sass/bass/bulma.css': path.join(setting.localserver.root, setting.dest.basePath, '/css'),
+    'src/components/w-share/css': path.join(setting.localserver.root, setting.dest.basePath, '/css')
   },
   plugins: [ // 额外的 npm 组件
     // 'yyl-flexlayout'

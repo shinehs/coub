@@ -23,6 +23,7 @@ module.exports = {
     "rules": {
         // 'strict': [2, "global"],
         // 禁止条件表达式中出现赋值操作符
+		'linebreak-style': ["off", "windows"],
         "no-cond-assign": 2,
 
         // 禁用 console
@@ -49,9 +50,6 @@ module.exports = {
 
         // 空格控制
         "indent": [ "warn", 4 , {"SwitchCase": 1}],
-
-        // 强制使用一致的换行风格
-        "linebreak-style": [ "error" ],
 
         // 强制使用一致的反勾号、双引号或单引号
         "quotes": [ "warn", "single" ],

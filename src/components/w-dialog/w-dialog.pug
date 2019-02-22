@@ -1,0 +1,20 @@
+include ../w-share/w-share
+mixin w-dialog
+    .w-dialog-wrapper
+        .w-dialog-cover
+        .w-dialog
+            .w-dialog-content
+                span.w-dialog-header Share this video >
+                br
+                span.w-dialog-header-url(title="http://www.yy.com") http://www.yy.com/usercentger/i
+                ul.w-dialog-shareList
+                    li(data-target="Facebook") Facebook
+                    li(data-target="Linkedin") Linkedin
+                    li(data-target="Twitter") Twitter
+                    li(data-target="Google+") Google+
+                    li(data-target="Tumblr") Tumblr
+                    li(data-target="Pinterest") Pinterest
+                .w-dialog-shareBtn.hidden
+                    +w-share()
+            .w-dialog-footer
+                span cacel

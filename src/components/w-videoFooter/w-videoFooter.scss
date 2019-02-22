@@ -1,0 +1,187 @@
+@charset "utf-8";
+@import '../../sass/base/variables';
+
+@mixin w-videoFooter($path) {
+    .video-detail__header {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        padding: px2rem(4) px2rem(8) 0;
+
+        .video-detail__header__title {
+            display: flex;
+            flex: 1;
+            width: 0;
+            margin-right: px2rem(4);
+            font-size: px2rem(16);
+            color: #000;
+            font-weight: bold;
+            align-items: center;
+
+            span {
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .video-detail__header__views {
+            display: flex;
+            margin-right: px2rem(4);
+            color: #000;
+            font-size: px2rem(12);
+            align-items: center;
+        }
+
+        .video-detail__header__moreBtn {
+            display: flex;
+
+            &.show {
+                .video-detailIcon {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    .video-detail__footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .video-detail__moreInfo {
+        display: none;
+
+        .video-detail__moreInfo__date {
+            margin-left: px2rem(20);
+            font-size: px2rem(12);
+            color: $mediumColor2;
+        }
+
+        p {
+            padding: px2rem(4) px2rem(20);
+            font-size: px2rem(12);
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .video-detail__owner__label {
+        ul {
+            font-size: px2rem(12);
+            display: flex;
+            flex-direction: row;
+            margin-top: px2rem(8);
+
+            li {
+                display: flex;
+                padding: px2rem(2) px2rem(4);
+                background-color: $lightColor4;
+                color: #000;
+                text-align: center;
+                margin-right: px2rem(4);
+
+                &.hight__light {
+                    background-color: $mainColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .video-detailIcon {
+        display: inline-block;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        width: px2rem(24);
+        height: px2rem(24);
+        fill: currentColor;
+        stroke: none;
+        transition: all 0.15s ease-in-out;
+    }
+
+    .video-detail__control {
+        display: flex;
+        align-items: flex-end;
+        margin: 0 px2rem(8) px2rem(4) 0;
+
+        .video-detail__control__likeBtn,
+        .video-detail__control__shareBtn {
+            margin-right: px2rem(8);
+            display: inline-flex;
+            flex-direction: column;
+
+            .icon {
+                display: inline-block;
+                width: px2rem(18);
+                height: px2rem(18);
+                background-size: cover;
+            }
+
+            .hot {
+                font-style: normal;
+                font-size: px2rem(12);
+                color: $mediumColor2;
+                text-align: center;
+            }
+        }
+
+        .video-detail__control__likeBtn {
+            &.active {
+                .icon {
+                    animation: scale 0.75s 0s;
+                    background-image: url('./images/heart_hover.png');
+                }
+            }
+
+            .icon {
+                background-image: url('./images/heart.png');
+            }
+
+        }
+
+        .video-detail__control__shareBtn {
+            .icon {
+                background-image: url('./images/share.png');
+
+                &:active {
+                    background-image: url('./images/share_hover.png');
+                }
+            }
+        }
+
+    }
+
+    .video-detail__owner {
+        display: flex;
+        flex-direction: column;
+        padding: 0 px2rem(8) px2rem(4);
+
+        .video-detail__owner__detail {
+            color: #000;
+            font-size: px2rem(12);
+
+            .video-detail__owner__detail__icon {
+                color: $mediumColor2;
+            }
+
+            .video-detail__owner__detail__name {
+                display: inline-block;
+                margin-left: px2rem(2);
+                max-width: px2rem(250);
+                color: #000;
+                font-weight: bold;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                vertical-align: text-bottom;
+            }
+        }
+    }
+}
