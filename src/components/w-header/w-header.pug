@@ -1,0 +1,24 @@
+mixin w-header
+    nav.navbar(role='navigation', aria-label='main navigation')
+        .navbar-brand
+            a.navbar-burger.burger(role='button', aria-label='menu', aria-expanded='false', data-target='navbarBasicExample')
+                i.navbar-burger__icon
+            a.navbar-item(href='https://www.xvidmate.com')
+                img(src='../../images/logo.png')
+            //- a.navbar-userLogo(href="#")
+            //-     img(src="https://huyaimg.msstatic.com/avatar/1001/14/01ae1488faf1d6d3cf301d2540de46_180_135.jpg?429440")
+            a.navbar-search(href="#")
+                i.navbar-search__icon
+        #navbarMenu.navbar-menu
+            .navbar-start
+                a.navbar-item
+                    | Home
+                a.navbar-item
+                    | Documentation
+            .navbar-end
+                .navbar-item
+                    .buttons
+                        a.button.is-primary
+                            strong Sign up
+                        a.button.is-light
+                            | Log in

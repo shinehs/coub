@@ -7136,9 +7136,7 @@ print {
 .navbar-burger {
   cursor: pointer;
   display: block;
-  height: 3.25rem;
   position: relative;
-  width: 3.25rem;
   margin-left: auto;
 }
 

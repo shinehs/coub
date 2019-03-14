@@ -1,0 +1,72 @@
+extends ../w-layout/w-layout
+include ../w-dialog/w-dialog
+include ../w-header/w-header
+include ../w-videoFooter/w-videoFooter
+include ../w-banner/w-banner
+include ../w-nav/w-nav
+
+block head
+    link(rel="stylesheet", href="./p-user.scss", type="text/css")
+
+block body
+    // + body here
+    +w-header()
+    +w-banner()
+    +w-nav-s()
+    
+    .rec-video-list
+        ul
+            li
+                .rec-video-list__cover
+                    img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
+                .rec-video-list__detail.simple
+                    .rec-video-list__detail__header
+                        +w-videoFooter-header-simple()
+                        +w-videoFooter-owner()
+                    .video-detail__footer
+                        +w-videoFooter-control()
+            li
+                .rec-video-list__cover
+                    img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
+                .rec-video-list__detail.simple
+                    .rec-video-list__detail__header
+                        +w-videoFooter-header-simple()
+                        +w-videoFooter-owner()
+                    .video-detail__footer
+                        +w-videoFooter-control()
+            li
+                .rec-video-list__cover
+                    img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
+                .rec-video-list__detail.simple
+                    .rec-video-list__detail__header
+                        +w-videoFooter-header-simple()
+                        +w-videoFooter-owner()
+                    .video-detail__footer
+                        +w-videoFooter-control()
+            li
+                .rec-video-list__cover
+                    img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
+                .rec-video-list__detail.simple
+                    .rec-video-list__detail__header
+                        +w-videoFooter-header-simple()
+                        +w-videoFooter-owner()
+                    .video-detail__footer
+                        +w-videoFooter-control()
+            li
+                .rec-video-list__cover
+                    img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
+                .rec-video-list__detail.simple
+                    .rec-video-list__detail__header
+                        +w-videoFooter-header-simple()
+                        +w-videoFooter-owner()
+                    .video-detail__footer
+                        +w-videoFooter-control()
+               
+    +w-dialog()
+    // - body here
+
+
+append script
+    script(src="{$jsDest}/ventors.js")
+    script(src="../../js/lib/requirejs/require.js", data-main="./p-user.js")
+    

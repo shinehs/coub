@@ -1,8 +1,25 @@
+mixin w-videoFooter-header
+    .video-detail__header
+        h2.video-detail__header__title 
+            span LIHIM NILANG RELASYON, NABUKING! (SEG 2 OF 2/20/2019 WANTED SA RADYO)
+        span.video-detail__header__views 123,123 views
+        span.video-detail__header__moreBtn
+            span.video-detailIcon
+                svg(viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet")
+                    path(d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="#EC1A59")
+                    
+mixin w-videoFooter-header-simple
+    .video-detail__header
+        h2.video-detail__header__title 
+            span LIHIM NILANG RELASYON, NABUKING! (SEG 2 OF 2/20/2019 WANTED SA RADYO)
+                    
+
 mixin w-videoFooter-owner
     .video-detail__owner
         a.video-detail__owner__detail(href="#")
             span.video-detail__owner__detail__icon By
             span.video-detail__owner__detail__name Tiểu Sư Phụ Official
+
 mixin w-videoFooter-control
     .video-detail__control
         span.video-detail__control__likeBtn
@@ -11,6 +28,7 @@ mixin w-videoFooter-control
         span.video-detail__control__shareBtn
             i.icon
             i.hot 1k
+
 mixin w-videoFooter-owner-label
     .video-detail__owner
         a.video-detail__owner__detail(href="#")

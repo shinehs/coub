@@ -1,0 +1,37 @@
+extends ../w-layout/w-layout
+
+include ../w-header/w-header
+
+
+block head
+    link(rel="stylesheet", href="./p-about.scss", type="text/css")
+
+block body
+    // + body here
+    +w-header()
+    .about-header
+        | About Xvimate
+    .about-text
+        p
+            | This is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statement
+        
+        p
+            | This is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statement
+        
+        p
+            | This is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statement
+        
+        p
+            | This is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statementThis is the website ownership statement
+    
+    .about-footer
+        span xvimate.com
+        br
+        span Copyright @ 2019-2022
+    // - body here
+
+
+append script
+    script(src="{$jsDest}/ventors.js")
+    script(src="../../js/lib/requirejs/require.js", data-main="./p-about.js")
+    

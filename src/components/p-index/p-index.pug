@@ -1,178 +1,20 @@
 extends ../w-layout/w-layout
-include ../w-dialog/w-dialog
+include ../w-header/w-header
 include ../w-videoFooter/w-videoFooter
+include ../w-nav/w-nav
+include ../w-videoList/w-videoList
+include ../w-dialog/w-dialog
 
 block head
     link(rel="stylesheet", href="./p-index.scss", type="text/css")
 
 block body
     // + body here
-    nav.navbar(role='navigation', aria-label='main navigation')
-        .navbar-brand
-            a.navbar-item(href='https://bulma.io')
-                img(src='https://bulma.io/images/bulma-logo.png', width='112', height='28')
-            a.navbar-burger.burger(role='button', aria-label='menu', aria-expanded='false', data-target='navbarBasicExample')
-                span(aria-hidden='true')
-                span(aria-hidden='true')
-                span(aria-hidden='true')
-            a.navbar-userLogo(href="#")
-                img(src="https://huyaimg.msstatic.com/avatar/1001/14/01ae1488faf1d6d3cf301d2540de46_180_135.jpg?429440")
-            a.navbar-search(href="#")
-                svg(viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet")
-                    path(d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z")
-        #navbarMenu.navbar-menu
-            .navbar-start
-                a.navbar-item
-                    | Home
-                a.navbar-item
-                    | Documentation
-            .navbar-end
-                .navbar-item
-                    .buttons
-                        a.button.is-primary
-                            strong Sign up
-                        a.button.is-light
-                            | Log in
+    +w-header()
+    +w-nav-l()
     
-    .container.video-list
-        ul
-            li.video-list__item
-                video#videoDemo(
-                    tabindex="0" 
-                    class="" 
-                    webkit-playsinline="" 
-                    playsinline="" 
-                    x-webkit-airplay="allow" 
-                    controlslist="nodownload" 
-                    title="demo!" 
-                    controls="true" 
-                    src="http://godsong.bs2dl.yy.com/djdmMjU2YTI5Mzg3ZTUzMTNiN2E3YWFjNjRkYzk3NmY3MTkxODc2ODA2MjdtYg"
-                )
-                div.video-detail
-                    .video-detail__header
-                        h2.video-detail__header__title 
-                            span LIHIM NILANG RELASYON, NABUKING! (SEG 2 OF 2/20/2019 WANTED SA RADYO)
-                        span.video-detail__header__views 123,123 views
-                        span.video-detail__header__moreBtn
-                            span.video-detailIcon
-                                svg(viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet")
-                                    path(d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="#EC1A59")
-                    .video-detail__footer
-                        +w-videoFooter-owner-label()
-                        .video-detail__control
-                            span.video-detail__control__likeBtn
-                                i.icon
-                                i.hot 98k
-                            span.video-detail__control__shareBtn
-                                i.icon
-                                i.hot 1k
-                    .video-detail__moreInfo
-                        span.video-detail__moreInfo__date
-                            | UpLoad at 2019.02.22
-                        p
-                            | town sent to the new female village officials du xiaoshuang and liu yishui assume the construction of a new ecological farm task, two people all the way to bump, from love each other has been to buchibuqi.Liu neng, zhao si and xie guangkun et al., in the process of constructing the new ecological farm, from forming cliques and conceit to forming a group to support the construction of the new farm.Song xiaofeng in order to marry song qinglian, actively strive to earn song fugui asked the bride price
-                        p
-                            | finally moved song fugui, and song qinglian married.As a result of sweet show and divorce of li guoguo, oneself and huang shiyou are apart let xie bigfoot suffer blow, full day is in a daze long expensive longing
-                        
-                        
-                //- .v-player-widget-toolbar
-                //-     span.v-player-widget-toolbar-btn
-                //-     span.v-player-widget-toolbar-progess
-                //-         span.v-player-widget-toolbar-prgess-main(style='width: 0%;')
-                //-     span.v-player-widget-toolbar-time 00:00:00
-        
-    //- .recommend-info
-    //-     .recommend-info__title
-    //-         | 接下来播放
-    //-     ul
-    //-         li.recommend-info__item
-    //-             a.recommend-info__item__thumb
-    //-                 .recommend-info__item__thumb__content
-    //-                     .recommend-info__item__thumb__content__bg.cover
-    //-                     img.cover(src="images/blank.gif" data-echo="//r1.ykimg.com/050C00005BE16869ADA7B2156B0E2EE9")
-    //-                     span.recommend-info__item__thumb__content__long
-    //-                         | 05:10
-    //-             .recommend-info__item__metadata
-    //-                 a.recommend-info__item__metadata__title(href="#")
-    //-                     h4 黃明志Namewee ft.李佳薇Jess Lee【一起飆高音 High Pitch Together】@亞洲通吃2018專輯 All Eat Asia
-    //-                     span.recommend-info__item__metadata__title__byline
-    //-                         | Namewee
-    //-                     span.recommend-info__item__metadata__title__stats
-    //-                         | 620万 次观看
-    //-         li.recommend-info__item
-    //-             a.recommend-info__item__thumb
-    //-                 .recommend-info__item__thumb__content
-    //-                     .recommend-info__item__thumb__content__bg.cover
-    //-                     img.cover(src="images/blank.gif" data-echo="//r1.ykimg.com/050C00005BE16869ADA7B2156B0E2EE9")
-    //-                     span.recommend-info__item__thumb__content__long
-    //-                         | 05:10
-    //-             .recommend-info__item__metadata
-    //-                 a.recommend-info__item__metadata__title(href="#")
-    //-                     h4 黃明志Namewee ft.李佳薇Jess Lee【一起飆高音 High Pitch Together】@亞洲通吃2018專輯 All Eat Asia
-    //-                     span.recommend-info__item__metadata__title__byline
-    //-                         | Namewee
-    //-                     span.recommend-info__item__metadata__title__stats
-    //-                         | 620万 次观看
-    //-         li.recommend-info__item
-    //-             a.recommend-info__item__thumb
-    //-                 .recommend-info__item__thumb__content
-    //-                     .recommend-info__item__thumb__content__bg.cover
-    //-                     img.cover(src="images/blank.gif" data-echo="//r1.ykimg.com/050C00005BE16869ADA7B2156B0E2EE9")
-    //-                     span.recommend-info__item__thumb__content__long
-    //-                         | 05:10
-    //-             .recommend-info__item__metadata
-    //-                 a.recommend-info__item__metadata__title(href="#")
-    //-                     h4 黃明志Namewee ft.李佳薇Jess Lee【一起飆高音 High Pitch Together】@亞洲通吃2018專輯 All Eat Asia
-    //-                     span.recommend-info__item__metadata__title__byline
-    //-                         | Namewee
-    //-                     span.recommend-info__item__metadata__title__stats
-    //-                         | 620万 次观看
-    //- .modal
-    //-     .modal-background
-    //-     .modal-card
-    //-         header.modal-card-head
-    //-             p.modal-card-title Modal title
-    //-             button.delete(aria-label='close')
-    //-         section.modal-card-body
-    //-             | this is body text,add is-active to show!
-    //-         footer.modal-card-foot
-    //-             button.button.is-success Save changes
-    //-             button.button Cancel
-
-    //- article.message.is-primary
-    //-     .message-header
-    //-         p Hello World
-    //-         button.delete(aria-label='delete')
-    //-     .message-body
-    //-         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    //-         strong Pellentesque risus mi
-    //-         | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
-    //-         a felis venenatis
-    //-         |  efficitur. Aenean ac 
-    //-         em eleifend lacus
-    //-         | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-    
-    //- .card
-        .card-image
-            figure.image.is-4by3
-                img.lazy(src='images/blank.gif' data-echo="https://bulma.io/images/placeholders/1280x960.png", alt='Placeholder image')
-        .card-content
-            .media
-                .media-left
-                    figure.image.is-48x48
-                        img(src='https://bulma.io/images/placeholders/96x96.png', alt='Placeholder image')
-                .media-content
-                    p.title.is-4 John Smith
-                    p.subtitle.is-6 @johnsmith
-            .content
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                | Phasellus nec iaculis mauris. 
-                a @bulmaio
-                | .
-                a(href='#') #css
-                a(href='#') #responsive
-                br
-                time(datetime='2016-1-1') 11:09 PM - 1 Jan 2016
+    +w-videoList()
+               
     +w-dialog()
     // - body here
 

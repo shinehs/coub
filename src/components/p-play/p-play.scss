@@ -1,0 +1,187 @@
+@charset "utf-8";
+@import '../w-layout/w-layout';
+@import '../../sass/base/variables';
+@import '../../components/w-share/w-share';
+
+@import '../../components/w-header/w-header';
+@include w-header('../../components/w-header');
+
+@import '../../components/w-dialog/w-dialog';
+@include w-dialog('../../components/w-dialog');
+
+@import '../../components/w-videoFooter/w-videoFooter';
+@include w-videoFooter('../../components/w-videoFooter');
+
+@import '../../components/w-videoList/w-videoList';
+@include w-videoList('../../components/w-videoList');
+
+.video-list {
+    .video-list__item {
+        position: relative;
+        video {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.recommend-info {
+    ul {
+        font-size: 0;
+    }
+
+    padding: px2rem(12);
+
+    .recommend-info__title {
+        padding: px2rem(16) 0;
+        font-size: px2rem(14);
+        color: $darkColor2;
+    }
+
+    .recommend-info__item {
+        display: flex;
+    }
+
+    .recommend-info__item+.recommend-info__item {
+        margin-top: 12px;
+    }
+
+    .recommend-info__item__thumb {
+        flex-shrink: 0;
+    }
+
+    .recommend-info__item__thumb__content {
+        position: relative;
+        width: px2rem(160);
+        height: px2rem(90);
+        overflow: hidden;
+    }
+
+    .recommend-info__item__thumb__content__bg {
+        background-color: hsla(0, 0%, 53.3%, .2);
+    }
+
+    .recommend-info__item__thumb__content__long {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: px2rem(5);
+        padding: px2rem(1) px2rem(4);
+        border-radius: px2rem(2);
+        font-size: px2rem(12);
+        color: #fff;
+        background-color: hsla(0, 0%, 6.7%, .8);
+    }
+
+    .recommend-info__item__metadata {
+        display: flex;
+        box-flex: 1;
+        flex-grow: 1;
+        min-width: 0;
+
+        h4 {
+            display: -webkit-box;
+            max-height: px2rem(50);
+            overflow: hidden;
+            font-size: px2rem(14);
+            line-height: 1.25;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .recommend-info__item__metadata__title {
+        display: block;
+        flex-grow: 1;
+        box-flex: 1;
+        padding: 0 px2rem(8);
+        color: $darkColor;
+
+        &__byline,
+        &__stats {
+            display: block;
+            font-size: px2rem(12);
+            color: $mediumColor2;
+        }
+    }
+}
+.rec-header{
+    padding: px2rem(8);
+}
+.rec-video-list__detail{
+    &.simple{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+}
+.video-recommend{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: px2rem(210);
+    top: 0px;
+    background-color: rgba(0,0,0,.25);
+    z-index: 10;
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: px2rem(300);
+        height: px2rem(160);
+        margin: px2rem(25) auto;
+    }
+    .video-recommend__item, .video-recommend__item__child{
+        position: relative;
+        &:active{
+            > .video-recommend__item__cover{
+                opacity: .8;
+                box-shadow: inset 0 0 px2rem(20) $mainColor;
+            }
+        }
+    }
+    .video-recommend__item__cover{
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        z-index: 12;
+    }
+    .video-recommend__item{
+        img{
+            width: px2rem(150);
+            height: px2rem(160);
+        }
+        &:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    .video-recommend__item__child{
+        img{
+            width: px2rem(140);
+            height: px2rem(74);
+        }
+    }
+
+    .video-recommend__footer{
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        width: 100%;
+        text-indent: px2rem(8);
+        background: linear-gradient(to bottom,rgba(51,51,51,0) 0,rgba(51,51,51,.15) 21%,rgba(51,51,51,.17) 25%,rgba(51,51,51,.22) 33%,rgba(51,51,51,.25) 37%,rgba(42,42,42,.28) 45%,rgba(38,38,38,.32) 49%,rgba(3,3,3,.37) 60%,rgba(0,0,0,.38) 61%,rgba(0,0,0,.72) 100%);
+        font-size: px2rem(14);
+        color: #fff;
+    }
+    &.active{
+        display: block;
+    }
+}
+/* media reset*/
+@import '../../sass/base/media';

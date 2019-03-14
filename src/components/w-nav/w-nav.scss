@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import '../../sass/base/variables';
+@mixin w-nav($path){
+    .w-nav{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin-bottom: px2rem(4);
+        border-bottom: 2px solid $lightColor4;
+        a{
+            position: relative;
+            display: flex;
+            top: 2px;
+            font-size: px2rem(16);
+            padding: px2rem(2) px2rem(8);
+            font-weight: bold;
+            color: #000;
+            &:visited{
+                color: #000;
+            }
+            &.active,&:active{
+                border-bottom: 2px solid $mainColor;
+                color: $mainColor;
+            }
+        }
+        &.nav-s{
+            a{
+                font-size: px2rem(12);
+            }
+        }
+    }
+}

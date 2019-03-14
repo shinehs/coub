@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import '../../sass/base/variables';
+@mixin w-banner($path){
+    .w-banner{
+        position: relative;
+        width: px2rem(375);
+        height: px2rem(180);
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left:0;
+            top: 0;
+            z-index: 0;
+        }
+        .w-banner__user{
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            padding-top: px2rem(60);
+            background: rgba(0,0,0,.15);
+            text-align: center;
+            color: #fff;
+            .w-banner__user__title{
+                font-size: px2rem(32);
+                font-weight: bold;
+                height: px2rem(42);
+            }
+        }
+        .w-banner__user__views{
+            font-size: px2rem(14);
+        }
+        .w-banner__user__followBtn{
+            display: block;
+            width: px2rem(56);
+            height: px2rem(16);
+            line-height: px2rem(16);
+            margin: px2rem(8) auto 0;
+            padding: 0 px2rem(4);
+            font-size: px2rem(12);
+            border-radius: px2rem(4);
+            background: #fff;
+            color: #000;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import '../w-layout/w-layout';
+@import '../../sass/base/variables';
+
+@import '../../components/w-header/w-header';
+@include w-header('../../components/w-header');
+
+.about-header{
+    width: 100%;
+    height: px2rem(120);
+    line-height: px2rem(120);
+    background: $mainColor;
+    color: #fff;
+    text-align:center;
+    font-size: px2rem(32);
+    margin-bottom: px2rem(4);
+}
+.about-text{
+    color: #000;
+    padding: px2rem(8) px2rem(20) px2rem(40);
+    border-top: 1px solid $mediumColor2;
+    border-bottom: 1px solid $mediumColor2;
+    p {
+        font-weight: bold;
+        line-height: px2rem(22);
+        margin-top: px2rem(20);
+    }
+}
+.about-footer{
+    text-align: center;
+}
+/* media reset*/
+@import '../../sass/base/media';

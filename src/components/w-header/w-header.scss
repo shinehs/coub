@@ -1,0 +1,63 @@
+@charset "utf-8";
+@import '../../sass/base/variables';
+
+@mixin w-header($path) {
+    .navbar {
+        .navbar-brand{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-height: px2rem(36);
+            .navbar-item{
+                display: flex;
+                img{
+                    width: px2rem(38);
+                    max-height: px2rem(28);
+                }
+            }
+            .navbar-burger{
+                display: flex;
+                margin-left: 0;
+                padding: px2rem(8) px2rem(16);
+                align-items: center;
+                justify-content: center;
+                .navbar-burger__icon{
+                    display: inline-block;
+                    width: px2rem(22);
+                    height: px2rem(22);
+                    background-image: url('../../images/nav.png');
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        .navbar-userLogo {
+            position: absolute;
+            width: px2rem(40);
+            height: px2rem(40);
+            left: 50%;
+            top: px2rem(6);
+            margin-left: px2rem(-20);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .navbar-search {
+            display: flex;
+            padding: px2rem(8) px2rem(16);
+            align-items: center;
+            justify-content: center;
+
+            .navbar-search__icon{
+                display: inline-block;
+                width: px2rem(22);
+                height: px2rem(22);
+                background-image: url('../../images/search.png');
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+extends ../w-layout/w-layout
+include ../w-dialog/w-dialog
+include ../w-header/w-header
+include ../w-videoFooter/w-videoFooter
+include ../w-adFooter/w-adFooter
+include ../w-videoList/w-videoList
+
+block head
+    link(rel="stylesheet", href="./p-play.scss", type="text/css")
+
+block body
+    // + body here
+    +w-header()
+    
+    .container.video-list
+        ul
+            li.video-list__item
+                video#videoDemo(
+                    tabindex="0" 
+                    class="player" 
+                    webkit-playsinline="" 
+                    playsinline="" 
+                    x-webkit-airplay="allow" 
+                    controlslist="nodownload" 
+                    title="demo!" 
+                    controls="true" 
+                    poster="https://i.ytimg.com/vi/FE9PszSPfKo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIpCGAFwAYABAQ==&rs=AOn4CLCDUbHYkLNIelldGDFBRutMTP52Iw" 
+                    src="http://godsong.bs2dl.yy.com/djdmMjU2YTI5Mzg3ZTUzMTNiN2E3YWFjNjRkYzk3NmY3MTkxODc2ODA2MjdtYg"
+                )
+                div.video-detail
+                    +w-videoFooter-header()
+                    .video-detail__footer
+                        +w-videoFooter-owner-label()
+                        .video-detail__control
+                            span.video-detail__control__likeBtn
+                                i.icon
+                                i.hot 98k
+                            span.video-detail__control__shareBtn
+                                i.icon
+                                i.hot 1k
+                    .video-detail__moreInfo
+                        span.video-detail__moreInfo__date
+                            | UpLoad at 2019.02.22
+                        p
+                            | town sent to the new female village officials du xiaoshuang and liu yishui assume the construction of a new ecological farm task, two people all the way to bump, from love each other has been to buchibuqi.Liu neng, zhao si and xie guangkun et al., in the process of constructing the new ecological farm, from forming cliques and conceit to forming a group to support the construction of the new farm.Song xiaofeng in order to marry song qinglian, actively strive to earn song fugui asked the bride price
+                        p
+                            | finally moved song fugui, and song qinglian married.As a result of sweet show and divorce of li guoguo, oneself and huang shiyou are apart let xie bigfoot suffer blow, full day is in a daze long expensive longing
+                div.video-recommend
+                    ul
+                        li.video-recommend__item(data-videoUrl="http://godsong.bs2dl.yy.com/djdmMjU2YTI5Mzg3ZTUzMTNiN2E3YWFjNjRkYzk3NmY3MTkxODc0Nzg0N21i", data-poster="https://i.ytimg.com/vi/OMNKHe72_Js/hqdefault.jpg?sqp=-oaymwEbCNIBEHZIVfKriqkDDggBFQAAikIYAXABgAEB&rs=AOn4CLBdXd1d42kKZSEWZt-uhlDY39LQbg")
+                            img(src="https://i.ytimg.com/vi/VqKsBoNj5X4/hqdefault.jpg?sqp=-oaymwEbCNIBEHZIVfKriqkDDggBFQAAikIYAXABgAEB&rs=AOn4CLCQ1nqIr9EYIWmSCeSZ8PuSdgCv_w")
+                            span.video-recommend__footer
+                                | 这是信息描述
+                            .video-recommend__item__cover
+                        li.video-recommend__item
+                            .video-recommend__item__child(data-videoUrl="http://godsong.bs2dl.yy.com/djdmMjU2YTI5Mzg3ZTUzMTNiN2E3YWFjNjRkYzk3NmY3MTkxODc0Nzg0N21i", data-poster="https://i.ytimg.com/vi/OMNKHe72_Js/hqdefault.jpg?sqp=-oaymwEbCNIBEHZIVfKriqkDDggBFQAAikIYAXABgAEB&rs=AOn4CLBdXd1d42kKZSEWZt-uhlDY39LQbg")
+                                img(src="https://i.ytimg.com/vi/OxoOSohmaag/hqdefault.jpg?sqp=-oaymwEbCNIBEHZIVfKriqkDDggBFQAAikIYAXABgAEB&rs=AOn4CLAHE-0rt9VbV7igFH07incWRUfRYw")
+                                span.video-recommend__footer
+                                    | 这是信息描述
+                                .video-recommend__item__cover
+                            .video-recommend__item__child(data-videoUrl="http://godsong.bs2dl.yy.com/djdmMjU2YTI5Mzg3ZTUzMTNiN2E3YWFjNjRkYzk3NmY3MTkxODc0Nzg0N21i", data-poster="https://i.ytimg.com/vi/OMNKHe72_Js/hqdefault.jpg?sqp=-oaymwEbCNIBEHZIVfKriqkDDggBFQAAikIYAXABgAEB&rs=AOn4CLBdXd1d42kKZSEWZt-uhlDY39LQbg")
+                                img(src="https://i.ytimg.com/vi/5bm7O372g7U/hqdefault.jpg?sqp=-oaymwEbCNIBEHZIVfKriqkDDggBFQAAikIYAXABgAEB&rs=AOn4CLDAfNMktiOtQB9jSYwQ9P3Y3mtb4w")
+                                span.video-recommend__footer
+                                    | 这是信息描述
+                                .video-recommend__item__cover
+                //- .v-player-widget-toolbar
+                //-     span.v-player-widget-toolbar-btn
+                //-     span.v-player-widget-toolbar-progess
+                //-         span.v-player-widget-toolbar-prgess-main(style='width: 0%;')
+                //-     span.v-player-widget-toolbar-time 00:00:00
+    .rec-header
+        | you my also like
+    +w-videoList()
+    //- .recommend-info
+    //-     .recommend-info__title
+    //-         | 接下来播放
+    //-     ul
+    //-         li.recommend-info__item
+    //-             a.recommend-info__item__thumb
+    //-                 .recommend-info__item__thumb__content
+    //-                     .recommend-info__item__thumb__content__bg.cover
+    //-                     img.cover(src="images/blank.gif" data-echo="//r1.ykimg.com/050C00005BE16869ADA7B2156B0E2EE9")
+    //-                     span.recommend-info__item__thumb__content__long
+    //-                         | 05:10
+    //-             .recommend-info__item__metadata
+    //-                 a.recommend-info__item__metadata__title(href="#")
+    //-                     h4 黃明志Namewee ft.李佳薇Jess Lee【一起飆高音 High Pitch Together】@亞洲通吃2018專輯 All Eat Asia
+    //-                     span.recommend-info__item__metadata__title__byline
+    //-                         | Namewee
+    //-                     span.recommend-info__item__metadata__title__stats
+    //-                         | 620万 次观看
+    //-         li.recommend-info__item
+    //-             a.recommend-info__item__thumb
+    //-                 .recommend-info__item__thumb__content
+    //-                     .recommend-info__item__thumb__content__bg.cover
+    //-                     img.cover(src="images/blank.gif" data-echo="//r1.ykimg.com/050C00005BE16869ADA7B2156B0E2EE9")
+    //-                     span.recommend-info__item__thumb__content__long
+    //-                         | 05:10
+    //-             .recommend-info__item__metadata
+    //-                 a.recommend-info__item__metadata__title(href="#")
+    //-                     h4 黃明志Namewee ft.李佳薇Jess Lee【一起飆高音 High Pitch Together】@亞洲通吃2018專輯 All Eat Asia
+    //-                     span.recommend-info__item__metadata__title__byline
+    //-                         | Namewee
+    //-                     span.recommend-info__item__metadata__title__stats
+    //-                         | 620万 次观看
+    //-         li.recommend-info__item
+    //-             a.recommend-info__item__thumb
+    //-                 .recommend-info__item__thumb__content
+    //-                     .recommend-info__item__thumb__content__bg.cover
+    //-                     img.cover(src="images/blank.gif" data-echo="//r1.ykimg.com/050C00005BE16869ADA7B2156B0E2EE9")
+    //-                     span.recommend-info__item__thumb__content__long
+    //-                         | 05:10
+    //-             .recommend-info__item__metadata
+    //-                 a.recommend-info__item__metadata__title(href="#")
+    //-                     h4 黃明志Namewee ft.李佳薇Jess Lee【一起飆高音 High Pitch Together】@亞洲通吃2018專輯 All Eat Asia
+    //-                     span.recommend-info__item__metadata__title__byline
+    //-                         | Namewee
+    //-                     span.recommend-info__item__metadata__title__stats
+    //-                         | 620万 次观看
+    //- .modal
+    //-     .modal-background
+    //-     .modal-card
+    //-         header.modal-card-head
+    //-             p.modal-card-title Modal title
+    //-             button.delete(aria-label='close')
+    //-         section.modal-card-body
+    //-             | this is body text,add is-active to show!
+    //-         footer.modal-card-foot
+    //-             button.button.is-success Save changes
+    //-             button.button Cancel
+
+    //- article.message.is-primary
+    //-     .message-header
+    //-         p Hello World
+    //-         button.delete(aria-label='delete')
+    //-     .message-body
+    //-         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    //-         strong Pellentesque risus mi
+    //-         | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+    //-         a felis venenatis
+    //-         |  efficitur. Aenean ac 
+    //-         em eleifend lacus
+    //-         | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+    
+    //- .card
+        .card-image
+            figure.image.is-4by3
+                img.lazy(src='images/blank.gif' data-echo="https://bulma.io/images/placeholders/1280x960.png", alt='Placeholder image')
+        .card-content
+            .media
+                .media-left
+                    figure.image.is-48x48
+                        img(src='https://bulma.io/images/placeholders/96x96.png', alt='Placeholder image')
+                .media-content
+                    p.title.is-4 John Smith
+                    p.subtitle.is-6 @johnsmith
+            .content
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                | Phasellus nec iaculis mauris. 
+                a @bulmaio
+                | .
+                a(href='#') #css
+                a(href='#') #responsive
+                br
+                time(datetime='2016-1-1') 11:09 PM - 1 Jan 2016
+    +w-dialog()
+    // - body here
+
+
+append script
+    script(src="{$jsDest}/ventors.js")
+    script(src="../../js/lib/requirejs/require.js", data-main="./p-play.js")
+    
