@@ -1,11 +1,11 @@
 
-@font-face {font-family: "iconfont";
-  src: url('iconfont.eot'); /* IE9*/
-  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
-}
+/*@font-face {font-family: "iconfont";
+  src: url('//web.yystatic.com/../src/js/lib/iShare/style/fonts/iconfont-c87f7a2a90.eot');
+  src: url('//web.yystatic.com/../src/js/lib/iShare/style/fonts/iconfont-c87f7a2a90.eot?#iefix') format('embedded-opentype'),
+  url('//web.yystatic.com/../src/js/lib/iShare/style/fonts/iconfont-875c80ac26.woff') format('woff'),  chrome, firefox
+  url('//web.yystatic.com/../src/js/lib/iShare/style/fonts/iconfont-226c768793.ttf') format('truetype'),
+  url('//web.yystatic.com/../src/js/lib/iShare/style/fonts/iconfont-39c5895d71.svg#iconfont') format('svg');
+}*/
 
 .iconfont {
   font-family:"iconfont" !important;
