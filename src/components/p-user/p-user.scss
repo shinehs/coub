@@ -17,47 +17,9 @@
 
 @import '../../components/w-nav/w-nav';
 @include w-nav('../../components/w-nav');
-.rec-video-list{
-    position: relative;
-    overflow: hidden;
-    height: px2rem(1000);
-    ul{
-        li{
-            border-bottom: 1px solid hsla(0,0%,53.3%,.4);
-            margin-bottom: px2rem(6);
-        }
-    }
-}
-.rec-video-list__cover{
-    display: flex;
-    flex: 1;
-    width: px2rem(375);
-    height: px2rem(210);
-    overflow: hidden;
-    img{
-        width: 100%;
-        height: auto;
-    }
-}
-.rec-video-list__detail__header{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-}
-.rec-video-list__detail{
-    &.simple{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-grow: 1;
-    }
-}
-.iScrollVerticalScrollbar{
-    .iScrollIndicator{
-        background-color: $mainColor;
-        border-radius: px2rem(3);
-    }
-}
+
+@import '../../components/w-videoList/w-videoList';
+@include w-videoList('../../components/w-videoList');
 
 /* media reset*/
 @import '../../sass/base/media';

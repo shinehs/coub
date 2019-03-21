@@ -3,7 +3,7 @@
 @mixin w-banner($path){
     .w-banner{
         position: relative;
-        width: px2rem(375);
+        width: 100%;
         height: px2rem(180);
         img{
             position: absolute;

@@ -17,6 +17,9 @@
             li {
                 border-bottom: 1px solid hsla(0, 0%, 53.3%, .4);
                 margin-bottom: px2rem(6);
+                &:nth-last-child(1){
+                    border-bottom: none;
+                }
                 &.adCover__normal{
                     border-bottom: none;
                     .rec-video-list__cover{

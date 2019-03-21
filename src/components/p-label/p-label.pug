@@ -2,7 +2,8 @@ extends ../w-layout/w-layout
 include ../w-dialog/w-dialog
 include ../w-header/w-header
 include ../w-videoFooter/w-videoFooter
-
+include ../w-videoList/w-videoList
+include ../w-adFooter/w-adFooter
 block head
     link(rel="stylesheet", href="./p-label.scss", type="text/css")
 
@@ -16,54 +17,9 @@ block body
             li #biniki girls
             li #tiktok hot girls
             li #sexy
-    .rec-video-list
-        ul
-            li
-                .rec-video-list__cover
-                    img(src="https://i.ytimg.com/vi/of5y8B97tAY/mqdefault.jpg?v=5c529a28")
-                .rec-video-list__detail.simple
-                    .rec-video-list__detail__header
-                        +w-videoFooter-header-simple()
-                        +w-videoFooter-owner()
-                    .video-detail__footer
-                        +w-videoFooter-control()
-            li
-                .rec-video-list__cover
-                    img(src="https://i.ytimg.com/vi/of5y8B97tAY/mqdefault.jpg?v=5c529a28")
-                .rec-video-list__detail.simple
-                    .rec-video-list__detail__header
-                        +w-videoFooter-header-simple()
-                        +w-videoFooter-owner()
-                    .video-detail__footer
-                        +w-videoFooter-control()
-            li
-                .rec-video-list__cover
-                    img(src="https://i.ytimg.com/vi/of5y8B97tAY/mqdefault.jpg?v=5c529a28")
-                .rec-video-list__detail.simple
-                    .rec-video-list__detail__header
-                        +w-videoFooter-header-simple()
-                        +w-videoFooter-owner()
-                    .video-detail__footer
-                        +w-videoFooter-control()
-            li
-                .rec-video-list__cover
-                    img(src="https://i.ytimg.com/vi/of5y8B97tAY/mqdefault.jpg?v=5c529a28")
-                .rec-video-list__detail.simple
-                    .rec-video-list__detail__header
-                        +w-videoFooter-header-simple()
-                        +w-videoFooter-owner()
-                    .video-detail__footer
-                        +w-videoFooter-control()
-            li
-                .rec-video-list__cover
-                    img(src="https://i.ytimg.com/vi/of5y8B97tAY/mqdefault.jpg?v=5c529a28")
-                .rec-video-list__detail.simple
-                    .rec-video-list__detail__header
-                        +w-videoFooter-header-simple()
-                        +w-videoFooter-owner()
-                    .video-detail__footer
-                        +w-videoFooter-control()
-               
+
+    +w-videoList()
+
     +w-dialog()
     // - body here
 
