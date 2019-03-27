@@ -54,22 +54,7 @@
             }
         }
     }
-    .ul-loader{
-        display: none;
-        .loading__icon{
-            display: block;
-            width: px2rem(40);
-            height: px2rem(40);
-            margin: 0 auto;
-            background: url('../../images/loading.gif');
-            background-size: contain;
-            background-position: 0 0;
-            background-repeat: no-repeat;
-        }
-        &.active{
-            display: block;
-        }
-    }
+
     .rec-video-list__cover {
         display: flex;
         flex: 1;

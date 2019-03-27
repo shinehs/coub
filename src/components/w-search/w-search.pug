@@ -69,32 +69,3 @@ mixin w-videoList
                             +w-videoFooter-owner()
                         .video-detail__footer
                             +w-videoFooter-control()
-        .ul-loader
-            span.loading__icon
-        <li-item class="videoTemp hidden">
-            li.normalLi
-                a(href="$url")
-                    .rec-video-list__cover
-                        img(src="$img")
-                    .rec-video-list__detail.simple
-                        .rec-video-list__detail__header
-                            +w-videoFooter-header-simple('$name')
-                            +w-videoFooter-owner('$owner')
-                        .video-detail__footer
-                            +w-videoFooter-control('$like','$share')
-            li.adCover__big
-                a(href="$url" target="_blank")
-                    .rec-video-list__cover
-                        img(src="$img")
-                    .rec-video-list__detail.simple
-                        .rec-video-list__detail__header
-                            +w-videoFooter-header-simple('$name')
-                            +w-ad-owner()
-            li.adCover__normal
-                a(href="$url" target="_blank")
-                    .rec-video-list__cover
-                        img(src="$img")
-                    .rec-video-list__detail.simple
-                        .rec-video-list__detail__header
-                            +w-videoFooter-header-simple()
-                            +w-ad-owner()

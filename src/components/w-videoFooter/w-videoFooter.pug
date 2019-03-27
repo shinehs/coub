@@ -8,26 +8,26 @@ mixin w-videoFooter-header
                 svg(viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet")
                     path(d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="#EC1A59")
                     
-mixin w-videoFooter-header-simple
+mixin w-videoFooter-header-simple(name)
     .video-detail__header
         h2.video-detail__header__title 
-            span LIHIM NILANG RELASYON, NABUKING! (SEG 2 OF 2/20/2019 WANTED SA RADYO)
+            span=name?name:'LIHIM NILANG RELASYON, NABUKING! (SEG 2 OF 2/20/2019 WANTED SA RADYO)'
                     
 
-mixin w-videoFooter-owner
+mixin w-videoFooter-owner(name)
     .video-detail__owner
         a.video-detail__owner__detail(href="#")
             span.video-detail__owner__detail__icon By
-            span.video-detail__owner__detail__name Tiểu Sư Phụ Official
+            span.video-detail__owner__detail__name=name?name: 'Tiểu Sư Phụ Official'
 
-mixin w-videoFooter-control
+mixin w-videoFooter-control(like,share)
     .video-detail__control
         span.video-detail__control__likeBtn
             i.icon
-            i.hot 98k
+            i.hot=like?like: '98k'
         span.video-detail__control__shareBtn
             i.icon
-            i.hot 1k
+            i.hot=share?share: '1k'
 
 mixin w-videoFooter-owner-label
     .video-detail__owner

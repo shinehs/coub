@@ -1,6 +1,7 @@
 'use script';
 
 define([], () => {
+    let timeId = 0;
     let navbar = {
         init() {
             this.addEventListener();
@@ -9,6 +10,7 @@ define([], () => {
             let $menu = $('#navbarMenu')[0];
             // menu click
             $('.navbar-burger').on('click', () => {
+                return false;
                 $('#navbarMenu').toggleClass('is-active');
             });
 
@@ -20,8 +22,29 @@ define([], () => {
             });
 
             // search
-            $('.navbar-search').on('click', () => {
+            $('.navbar-search,.navbar__search__cover,.navbar__search__content__btn.type__back').on('click', () => {
                 // TODO
+                $('.navbar__search').toggleClass('active');
+            });
+            $('.navbar__search__content__btn.type__search').on('click', () => {
+                window.open('//www.xvidmate.com?keyword=' + $('.navbar__search__content__input').val().trim(),'_self');
+            });
+            $('.navbar__search__content__input').on('input', (e)=>{
+                // clearTimeout(timeId);
+                // timeId = setTimeout(function() {
+                //     $.ajax({
+                //         type: 'GET',
+                //         url: '//www.xvidmate.com',
+                //         data: { 'keyword': $('.navbar__search__content__input').val().trim()},
+                //         dataType: 'json',
+                //         success: function(data) {
+                //             debugger;
+                //         },
+                //         error: function(err) {
+                //             debugger;
+                //         }
+                //     });
+                // }, 300);
             });
         }
     };
