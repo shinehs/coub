@@ -1,0 +1,27 @@
+extends ../w-layout/w-layout
+include ../w-header/w-header
+include ../w-videoFooter/w-videoFooter
+include ../w-nav/w-nav
+include ../w-videoList/w-videoList
+include ../w-adFooter/w-adFooter
+include ../w-dialog/w-dialog
+
+block head
+    link(rel="stylesheet", href="./p-search.scss", type="text/css")
+
+block body
+    // + body here
+    +w-header()
+    
+    +w-videoList()
+               
+    +w-dialog()
+    .notSearchResult
+        span.notSearchResult__txt no search results, change the keyword to try ~
+    // - body here
+
+
+append script
+    script(src="{$jsDest}/ventors.js")
+    script(src="../../js/lib/requirejs/require.js", data-main="./p-search.js")
+    

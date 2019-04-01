@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import '../w-layout/w-layout';
+@import '../../sass/base/variables';
+@import '../../components/w-share/w-share';
+
+@import '../../components/w-header/w-header';
+@include w-header('../../components/w-header');
+
+@import '../../components/w-dialog/w-dialog';
+@include w-dialog('../../components/w-dialog');
+
+@import '../../components/w-videoFooter/w-videoFooter';
+@include w-videoFooter('../../components/w-videoFooter');
+
+@import '../../components/w-nav/w-nav';
+@include w-nav('../../components/w-nav');
+
+@import '../../components/w-videoList/w-videoList';
+@include w-videoList('../../components/w-videoList');
+
+/* media reset*/
+@import '../../sass/base/media';
+
+.notSearchResult{
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid hsla(0,0%,53.3%,.4);
+    border-bottom: 1px solid hsla(0,0%,53.3%,.4);
+    margin-top: px2rem(50);
+    .notSearchResult__txt{
+        font-size: px2rem(14);
+    }
+}

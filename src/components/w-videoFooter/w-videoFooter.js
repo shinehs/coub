@@ -7,8 +7,8 @@ define(['dialog'], (dialog) => {
         },
         addEventListener() {
             // share
-            $('.video-detail__control__shareBtn').on('click', function() {
-                self.dialogObj.show('www.google.com');
+            $('.video-detail__control__shareBtn').on('click', function(e) {
+                self.dialogObj.show($(e.target).closest('li').attr('data-shareurl'));
             });
             // show more info
             $('.video-detail__header__moreBtn').on('click', function() {

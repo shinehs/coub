@@ -1,69 +1,55 @@
 'use script';
 
-require(['iScroll'], (iScroll) => {
-    // let myScroll = new iScroll('.rec-video-list', {
-    //     mouseWheel: false,
-    //     scrollbars: true,
-    //     fadeScrollbars:true,
-    //     bounce: true // 容器边沿的反弹动画 
-    // });
+define([], () => {
     let timeId = 0;
-    let hpageNo = 1;
-    let fpageNo = 1;
-    let rpageNo = 1;
+    let pageNo = 1;
+    let searchKeyword = '';
+    let pageType = '';
     let scrollLoad = {
-        init () {
+        init (type, keyword) {
+            if (keyword) {
+                searchKeyword = keyword;
+            }
+            if (type) {
+                pageType = type;
+            }
             this.bindEvent();
         },
         bindEvent() {
             let self = this;
             $(document, window).bind('scroll', function(e) {
                 clearTimeout(timeId);
-                let scrollH = $(window).height();
-                let scrollT = $(window).scrollTop();
+                let scrollT = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
                 timeId = setTimeout(function() {
                     // 这里区分3个不同情况的广告内容进行加载。
                     // normalLi adBig adnNormal
-                    if (scrollT > scrollH * 0.6) {
-                        debugger;
+                    if (self.getScrollTop() + self.getClientHeight() + 150 > scrollT) {
                         $('.rec-video-list .ul-loader').addClass('active');
-                        self.getType();
                         $.ajax({
                             type: 'GET',
                             url: '//www.xvidmate.com',
                             data: {
-                                'page': self.getPageNo(),
+                                'page': ++pageNo,
                                 'tag': window.tag?window.tag:1,
-                                'type': self.getType()
+                                'type': searchKeyword?'':self.getType(),
+                                'keyword': searchKeyword
                             },
                             dataType: 'json',
                             success: function(data) {
                                 $('.rec-video-list .ul-loader').removeClass('active');
-                                debugger;
-                                let _data = [
-                                    {
-                                        type:'s-ad',
-                                        name:'xxx',
-                                        view:123,
-                                        up:12,
-                                        share:123,
-                                        auther:'aaa',
-                                        image:'#',
-                                        url:'#',
-                                        is_up:0
+                                let resData = JSON.parse(data);
+                                if (resData && resData.code === 200) {
+                                    let _data = resData.data;
+                                    let res = [];
+                                    // if (data.code == 200) {
+                                    for (let i=0, len=_data.length;i<len;i++) {
+                                        res.push(self.buildTemple(_data[i]));
                                     }
-                                ];//data.data;
-                                let res = [];
-                                // if (data.code == 200) {
-                                for (let i=0, len=_data.length;i<len;i++) {
-                                    res.push(self.buildTemple(_data[i]));
+                                    $('.rec-video-list ul').append(res.join(' '));
                                 }
-                                // }
-                                debugger;
-                                $('.rec-video-list ul').append(res.join(' '));
                             },
                             error: function(err) {
-                                debugger;
+                                console.log(err);
                             }
                         });
                     }
@@ -71,6 +57,9 @@ require(['iScroll'], (iScroll) => {
             });
         },
         getType() {
+            if (pageType) {
+                return pageType;
+            }
             let index = $('.w-nav .active').index();
             if (index === 0) {
                 return 'Hot';
@@ -78,16 +67,6 @@ require(['iScroll'], (iScroll) => {
                 return 'Fresh';
             } else {
                 return 'Rising';
-            }
-        },
-        getPageNo() {
-            let type = this.getType();
-            if ('Hot' === type) {
-                return ++hpageNo;
-            } else if ('Fresh' === type) {
-                return ++fpageNo;
-            } else {
-                return ++rpageNo;
             }
         },
         buildTemple(data) {
@@ -99,10 +78,26 @@ require(['iScroll'], (iScroll) => {
             } else {
                 temp = $('.videoTemp .adCover__big')[0].outerHTML;
             }
-            return temp.replace(/\$url/g, data.url).replace(/\$img/g, data.image).replace(/\$name/g, data.name).replace(/\$owner/g, data.auther).replace(/\$like/g, data.up).replace(/\$share/g, data.share);
+            return temp.replace(/\$share/g, data.url).replace(/\$url/g, data.url).replace(/\$img/g, data.image).replace(/\$name/g, data.name).replace(/\$owner/g, data.auther).replace(/\$like/g, data.up).replace(/\$share/g, data.share);
+        },
+        getClientHeight() {
+            var clientHeight = 0;
+            if (document.body.clientHeight && document.documentElement.clientHeight) {
+                clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+            } else {
+                clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+            }
+            return clientHeight;
+        },
+        getScrollTop() {
+            var scrollTop = 0;
+            if (document.documentElement && document.documentElement.scrollTop) {
+                scrollTop = document.documentElement.scrollTop;
+            } else if (document.body) {
+                scrollTop = document.body.scrollTop;
+            }
+            return scrollTop;
         }
     };
-    scrollLoad.init();
-    // videoFooter.init();
-    // document.documentElement.style.overflow='hidden';
+    return scrollLoad;
 });

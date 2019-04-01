@@ -8,6 +8,7 @@ define(['dialog'], (dialog) => {
         addEventListener() {
             // share
             $('.video-detail__control__shareBtn').on('click', function() {
+                debugger;
                 self.dialogObj.show('www.google.com');
             });
             // show more info

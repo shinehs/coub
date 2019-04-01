@@ -1,7 +1,7 @@
 mixin w-videoList
     .rec-video-list
         ul
-            li
+            li(data-shareUrl="//www.baidu.com")
                 a(href="./play.html")
                     .rec-video-list__cover
                         img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
@@ -20,7 +20,7 @@ mixin w-videoList
                             +w-videoFooter-header-simple()
                             +w-ad-owner()
                         
-            li
+            li(data-shareUrl="//www.baidu.com")
                 a(href="./play.html")
                     .rec-video-list__cover
                         img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
@@ -39,7 +39,7 @@ mixin w-videoList
                         .rec-video-list__detail__header
                             +w-videoFooter-header-simple()
                             +w-ad-owner()
-            li
+            li(data-shareUrl="//www.baidu.com")
                 a(href="./play.html")
                     .rec-video-list__cover
                         img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
@@ -49,7 +49,7 @@ mixin w-videoList
                             +w-videoFooter-owner()
                         .video-detail__footer
                             +w-videoFooter-control()
-            li
+            li(data-shareUrl="//www.baidu.com")
                 a(href="./play.html")
                     .rec-video-list__cover
                         img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
@@ -59,7 +59,7 @@ mixin w-videoList
                             +w-videoFooter-owner()
                         .video-detail__footer
                             +w-videoFooter-control()
-            li
+            li(data-shareUrl="//www.baidu.com")
                 a(href="./play.html")
                     .rec-video-list__cover
                         img(src="https://i.ytimg.com/vi/1wxijwWKOIc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_kEaRcSn4VR50m6FeL_jBJY_oSw")
@@ -72,7 +72,7 @@ mixin w-videoList
         .ul-loader
             span.loading__icon
         <li-item class="videoTemp hidden">
-            li.normalLi
+            li.normalLi(data-url="$share")
                 a(href="$url")
                     .rec-video-list__cover
                         img(src="$img")
