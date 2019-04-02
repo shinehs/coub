@@ -71,8 +71,8 @@ mixin w-videoList
                             +w-videoFooter-control()
         .ul-loader
             span.loading__icon
-        <li-item class="videoTemp hidden">
-            li.normalLi(data-url="$share")
+        script#normalLi(type="text/html")
+            li.normalLi(data-url="$shareurl")
                 a(href="$url")
                     .rec-video-list__cover
                         img(src="$img")
@@ -82,6 +82,7 @@ mixin w-videoList
                             +w-videoFooter-owner('$owner')
                         .video-detail__footer
                             +w-videoFooter-control('$like','$share')
+        script#adCover__big(type="text/html")
             li.adCover__big
                 a(href="$url" target="_blank")
                     .rec-video-list__cover
@@ -90,6 +91,7 @@ mixin w-videoList
                         .rec-video-list__detail__header
                             +w-videoFooter-header-simple('$name')
                             +w-ad-owner()
+        script#adCover__normal(type="text/html")
             li.adCover__normal
                 a(href="$url" target="_blank")
                     .rec-video-list__cover

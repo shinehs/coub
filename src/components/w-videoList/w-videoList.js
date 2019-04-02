@@ -72,13 +72,19 @@ define([], () => {
         buildTemple(data) {
             let temp = '';
             if (data.type == 'video') {
-                temp = $('.videoTemp .normalLi')[0].outerHTML;
+                temp = $('#normalLi')[0].innerHTML;
             } else if (data.type == 's-ad') {
-                temp = $('.videoTemp .adCover__normal')[0].outerHTML;
+                temp = $('#adCover__normal')[0].innerHTML;
             } else {
-                temp = $('.videoTemp .adCover__big')[0].outerHTML;
+                temp = $('#adCover__big')[0].innerHTML;
             }
-            return temp.replace(/\$share/g, data.url).replace(/\$url/g, data.url).replace(/\$img/g, data.image).replace(/\$name/g, data.name).replace(/\$owner/g, data.auther).replace(/\$like/g, data.up).replace(/\$share/g, data.share);
+            return temp.replace(/\$shareurl/g, data.url)
+            .replace(/\$url/g, data.url)
+            .replace(/\$img/g, data.image)
+            .replace(/\$name/g, data.name)
+            .replace(/\$owner/g, data.author)
+            .replace(/\$like/g, data.up)
+            .replace(/\$share/g, data.share);
         },
         getClientHeight() {
             var clientHeight = 0;
