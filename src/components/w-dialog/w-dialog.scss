@@ -67,6 +67,11 @@
                 text-decoration: underline;
             }
         }
+        .w-dialog-share{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
         .w-dialog-header-url{
             display: block;
             background-color: $lightColor2;
@@ -76,6 +81,18 @@
             text-indent: px2rem(6);
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        .w-dialog-header-btn{
+            display: block;
+            position: relative;
+            top: px2rem(8);
+            width: px2rem(40);
+            height: px2rem(26);
+            line-height: px2rem(26);
+            text-align: center;
+            color: #888;
+            text-decoration: underline;
+            border-radius: px2rem(20);
         }
     }
 }
