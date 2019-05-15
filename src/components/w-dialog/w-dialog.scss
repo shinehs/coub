@@ -85,14 +85,20 @@
         .w-dialog-header-btn{
             display: block;
             position: relative;
-            top: px2rem(8);
-            width: px2rem(40);
-            height: px2rem(26);
-            line-height: px2rem(26);
+            margin-left: px2rem(4);
+            width: px2rem(60);
+            height: px2rem(36);
+            line-height: px2rem(36);
             text-align: center;
             color: #888;
             text-decoration: underline;
             border-radius: px2rem(20);
+            &.success{
+                color: $confirmColor;
+            }
+            &:active {
+                color: $confirmColor;
+            }
         }
     }
 }
