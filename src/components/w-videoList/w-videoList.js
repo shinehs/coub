@@ -5,6 +5,7 @@ define([], () => {
     let pageNo = 1;
     let searchKeyword = '';
     let pageType = '';
+    let noMore = false;
     let scrollLoad = {
         init (type, keyword) {
             if (keyword) {
@@ -20,6 +21,9 @@ define([], () => {
             $(document, window).bind('scroll', function(e) {
                 clearTimeout(timeId);
                 let scrollT = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+                if (noMore) {
+                    return false;
+                }
                 timeId = setTimeout(function() {
                     // 这里区分3个不同情况的广告内容进行加载。
                     // normalLi adBig adnNormal
@@ -41,9 +45,15 @@ define([], () => {
                                 if (resData && resData.code === 200) {
                                     let _data = resData.data;
                                     let res = [];
-                                    // if (data.code == 200) {
-                                    for (let i=0, len=_data.length;i<len;i++) {
-                                        res.push(self.buildTemple(_data[i]));
+                                    if (_data.length > 0) {
+                                        for (let i=0, len=_data.length;i<len;i++) {
+                                            res.push(self.buildTemple(_data[i]));
+                                        }
+                                    } else {
+                                        noMore = true;
+                                        $('.loading__icon').addClass('hidden');
+                                        $('.ul-loader').append('<p style="text-align:center;">no more videos~</p>');
+                                        $('.ul-loader').addClass('active');
                                     }
                                     $('.rec-video-list ul').append(res.join(' '));
                                 }

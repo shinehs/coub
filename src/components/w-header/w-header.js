@@ -5,6 +5,7 @@ define([], () => {
     let navbar = {
         init() {
             this.addEventListener();
+            $('head').append('<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />');
         },
         addEventListener() {
             let $menu = $('#navbarMenu')[0];
