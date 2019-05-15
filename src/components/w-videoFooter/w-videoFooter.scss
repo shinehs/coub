@@ -10,8 +10,7 @@
         padding: px2rem(4) px2rem(8) 0;
         .video-detail__header__title {
             display: flex;
-            flex: 1;
-            width: 0;
+            width: px2rem(260);
             margin-right: px2rem(4);
             font-size: px2rem(16);
             color: #000;
@@ -19,6 +18,8 @@
             align-items: center;
 
             span {
+                display: block;
+                position: relative;
                 max-width: 100%;
                 white-space: nowrap;
                 overflow: hidden;
